@@ -3,7 +3,6 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
 
 var enemyName = "Roborto";
@@ -42,22 +41,20 @@ var fight = function() {
       window.alert(playerName + " still has " + playerHealth + " health remaining.");
     }
   // if player choses to skip
-} else if (promptFight === "skip" || promptFight === "SKIP") {
-  var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+  } else if (promptFight === "skip" || promptFight === "SKIP") {
+    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
 
-  if (confirmSkip) {
+    if (confirmSkip) {
     window.alert(playerName + " has decided to skip this fight. Goodbye!");
     playerMoney = playerMoney - 2;
-  }
-  else {
-    fight();
-  }
+    }
+    else {
+      fight();
+    }
   } else {
   window.alert("You need to choose a valid option. Try again!")
   }
 };
 
 fight();
-console.log (
-  playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
-);
+
